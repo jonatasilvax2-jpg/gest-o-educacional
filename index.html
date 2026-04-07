@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestão Educacional Municipal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- TELA DE LOGIN -->
+    <div id="login-screen" class="screen active">
+        <div class="login-container">
+            <div class="login-header">
+                <img src="https://cdn-icons-png.flaticon.com/512/2232/2232688.png" alt="Educação" class="logo">
+                <h1>Sistema de Gestão Educacional Municipal</h1>
+                <p class="subtitle">Secretaria Municipal de Educação</p>
+            </div>
+            
+            <div class="login-form">
+                <div class="form-group">
+                    <label><i class="fas fa-user-tag"></i> Tipo de Usuário:</label>
+                    <select id="login-type">
+                        <option value="">Selecione seu perfil</option>
+                        <option value="secretaria">Secretaria da Educação</option>
+                        <option value="diretor">Diretor de Escola</option>
+                        <option value="professor">Professor</option>
+                        <option value="aluno">Aluno</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label><i class="fas fa-envelope"></i> Usuário:</label>
+                    <input type="text" id="username" placeholder="Digite seu e-mail">
+                </div>
+                
+                <div class="form-group">
+                    <label><i class="fas fa-lock"></i> Senha:</label>
+                    <input type="password" id="password" placeholder="Digite sua senha">
+                </div>
+                
+                <button id="login-btn" class="btn btn-primary">
+                    <i class="fas fa-sign-in-alt"></i> Entrar no Sistema
+                </button>
+                
+                <div class="login-demo-info">
+                    <p><strong>🔑 Demonstração para Investidores</strong></p>
+                    <p><i class="fas fa-info-circle"></i> Use as credenciais de teste abaixo</p>
+                    <table class="demo-credentials">
+                        <tr><td>Secretaria:</td><td>admin@sme / admin123</td></tr>
+                        <tr><td>Diretor:</td><td>diretor@escola / diretor123</td></tr>
+                        <tr><td>Professor:</td><td>professor@escola / professor123</td></tr>
+                        <tr><td>Professor:</td><td>julio12@gmail.com / senha123</td></tr>
+                        <tr><td>Aluno:</td><td>aluno@escola / aluno123</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- DASHBOARD PRINCIPAL -->
+    <div id="dashboard-screen" class="screen">
+        <header class="header">
+            <div class="header-left">
+                <button id="menu-toggle" class="btn-icon">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h2 id="dashboard-title">Dashboard</h2>
+            </div>
+            <div class="header-right">
+                <div class="user-info">
+                    <span id="current-user">Usuário</span>
+                    <span id="current-role" class="user-role">Perfil</span>
+                </div>
+                <button id="logout-btn" class="btn btn-secondary">
+                    <i class="fas fa-sign-out-alt"></i> Sair
+                </button>
+            </div>
+        </header>
+        
+        <div class="main-container">
+            <nav id="sidebar" class="sidebar">
+                <div class="sidebar-header">
+                    <h3><i class="fas fa-menu"></i> Menu</h3>
+                </div>
+                <ul id="sidebar-menu" class="sidebar-menu">
+                    <!-- Menu será carregado dinamicamente -->
+                </ul>
+            </nav>
+            
+            <main id="main-content" class="main-content">
+                <div id="content-area">
+                    <!-- Conteúdo será carregado dinamicamente -->
+                </div>
+            </main>
+        </div>
+        
+        <footer class="footer">
+            <p>Sistema de Gestão Educacional Municipal - Versão 4.0</p>
+            <p>© 2023 Secretaria Municipal de Educação - Demonstração para Investidores</p>
+        </footer>
+    </div>
+    
+    <!-- MODAL -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Título</h3>
+                <button id="modal-close" class="btn-icon">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                Conteúdo
+            </div>
+            <div class="modal-footer">
+                <button id="modal-cancel" class="btn btn-secondary">Cancelar</button>
+                <button id="modal-confirm" class="btn btn-primary">Confirmar</button>
+            </div>
+        </div>
+    </div>
+    
+<!-- DADOS -->
+<script src="dados/mockData.js"></script>
+
+<!-- GERENCIADOR DE MÓDULOS (DEVE VIR PRIMEIRO) -->
+<script src="modulos/modulo-loader.js"></script>
+
+<!-- MÓDULOS DE FALLBACK -->
+<script src="modulos/fallback.js"></script>
+
+<!-- MÓDULOS DA FASE 1 (se existirem) -->
+<script src="modulos/secretaria.js"></script>
+<script src="modulos/diretor.js"></script>
+<script src="modulos/professor.js"></script>
+<script src="modulos/aluno.js"></script>
+<script src="modulos/biblioteca.js"></script>
+<script src="modulos/merenda.js"></script>
+<script src="modulos/transporte.js"></script>
+<script src="modulos/comunicacao.js"></script>
+<script src="modulos/atividades.js"></script>
+<script src="modulos/vagas.js"></script>
+<script src="modulos/reunioes.js"></script>
+<script src="modulos/projetos.js"></script>
+<script src="modulos/saude.js"></script>
+<script src="modulos/bolsas.js"></script>
+<script src="modulos/estagio.js"></script>
+<script src="modulos/monitoria.js"></script>
+<script src="modulos/competicoes.js"></script>
+<script src="modulos/horas.js"></script>
+<script src="modulos/pesquisas.js"></script>
+<script src="modulos/documentos.js"></script>
+<script src="modulos/uniforme.js"></script>
+<script src="modulos/cursos.js"></script>
+<script src="modulos/feedback.js"></script>
+<script src="modulos/relatorios.js"></script>
+
+<!-- MÓDULOS DA FASE 2 -->
+<script src="modulos/notificacoes.js"></script>
+<script src="modulos/graficos.js"></script>
+<script src="modulos/busca.js"></script>
+<script src="modulos/temas.js"></script>
+<script src="modulos/pwa.js"></script>
+<script src="modulos/exportacao.js"></script>
+<script src="modulos/backup.js"></script>
+
+<!-- MÓDULOS DA FASE 3 -->
+<script src="modulos/auditoria.js"></script>
+<script src="modulos/autenticacao2fa.js"></script>
+<script src="modulos/api.js"></script>
+<script src="modulos/i18n.js"></script>
+<script src="modulos/acessibilidade.js"></script>
+<script src="modulos/cache.js"></script>
+<script src="modulos/dashboard-custom.js"></script>
+
+<!-- MÓDULOS DA FASE 4 - IA -->
+<script src="modulos/ia-previsao.js"></script>
+<script src="modulos/ia-recomendacao.js"></script>
+<script src="modulos/ia-evasao.js"></script>
+<script src="modulos/chatbot.js"></script>
+
+<!-- SCRIPT PRINCIPAL (SEMPRE POR ÚLTIMO) -->
+<script src="script.js"></script>
+</body>
+</html>
